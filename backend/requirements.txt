@@ -1,0 +1,11 @@
+fastapi==0.141.1
+uvicorn[standard]>=0.30
+sqlalchemy>=2.0
+faster-whisper==1.2.1
+requests==2.34.2
+pydantic>=2.0
+python-multipart
+httpx[socks]
+reportlab>=4.0
+
+Pillow>=10.0

@@ -1,0 +1,31 @@
+name: video-learning-workbench
+services:
+  workbench:
+    build:
+      context: .
+    restart: unless-stopped
+    init: true
+    # 当前仍是单用户版本。完成访客隔离之前，仅在服务器本机访问。
+    ports:
+      - "127.0.0.1:8080:8000"
+    environment:
+      STORAGE_ROOT: /var/lib/workbench
+      DB_URL: sqlite:////var/lib/workbench/workbench.db
+      HF_HOME: /var/cache/workbench/huggingface
+      FRONTEND_DIST: /app/static
+      ASR_DEVICE: cpu
+      ASR_COMPUTE_TYPE: auto
+      # 不继承宿主的 LLM 配置，不读取 backend/.env。
+      LLM_BASE_URL: ""
+      LLM_API_KEY: ""
+      LLM_MODEL: ""
+    volumes:
+      - workbench-data:/var/lib/workbench
+      - whisper-cache:/var/cache/workbench
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+volumes:
+  workbench-data:
+  whisper-cache:

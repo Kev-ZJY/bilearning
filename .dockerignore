@@ -1,0 +1,28 @@
+# 默认拒绝全部文件，只向 Docker 发送构建必需输入。
+**
+!Dockerfile
+!.dockerignore
+!backend/
+!backend/requirements.txt
+!backend/app/
+!backend/app/**
+!frontend/
+!frontend/package.json
+!frontend/package-lock.json
+!frontend/index.html
+!frontend/tsconfig.json
+!frontend/vite.config.ts
+!frontend/src/
+!frontend/src/**
+# 即使白名单目录内误放这些文件，也不发送给 Docker。
+**/.env
+**/.env.*
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/*.pem
+**/*.key
+**/__pycache__/**
+**/*.pyc
+**/*.test.ts
+**/*.test.tsx

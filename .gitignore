@@ -1,0 +1,57 @@
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Runtime data, user content and model weights
+data/
+/models/
+*.db
+*.sqlite
+*.sqlite3
+*.db-*
+*.sqlite-*
+.video-workbench/
+*.mp4
+*.mkv
+*.mp3
+*.wav
+*.srt
+*.log
+*.gguf
+*.safetensors
+*.onnx
+*.pt
+
+# Dependencies, caches and generated applications
+.venv/
+node_modules/
+dist/
+__pycache__/
+*.py[cod]
+.DS_Store
+/desktop/build/
+/release/
+frontend/vite.config.ts.timestamp-*.mjs
+
+# Personal development material and tests are not part of this public skeleton
+.workbuddy/
+.codex/
+.agents/
+.pytest_cache/
+.pytest_tmp/
+.coverage
+coverage/
+htmlcov/
+tests/
+test/
+__tests__/
+*.test.*
+*.spec.*
+pytest.ini
+requirements-dev.txt
+/handoff/
+/output/
+/docs/evidence-*/
